@@ -1,4 +1,4 @@
-package com.example.leewoo5629lee.myapplication;
+package com.example.leewoo5629lee.myDiary;
 
 import org.junit.Test;
 

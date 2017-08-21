@@ -1,4 +1,4 @@
-package com.example.leewoo5629lee.myapplication;
+package com.example.leewoo5629lee.myDiary;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
