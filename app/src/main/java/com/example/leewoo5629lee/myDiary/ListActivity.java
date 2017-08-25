@@ -30,6 +30,7 @@ public class ListActivity extends AppCompatActivity {
                                 new Article("title4", "content4")*/
         //};
         mListView = (ListView) findViewById(R.id.listView);
+        mButton = (Button) findViewById(R.id.btn_toMain);
         //ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_item, articles);
 
 
@@ -56,12 +57,22 @@ public class ListActivity extends AppCompatActivity {
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(ListActivity.this, MainActivity.class);
+                Intent intent = new Intent(ListActivity.this, ReadActivity.class);
                 intent.putExtra("title", articles.get(position).getTitle());
                 intent.putExtra("content", articles.get(position).getContent());
                 startActivity(intent);
             }
         });
+
+        //메인페이지 이동 버튼 이벤트
+        View.OnClickListener onClickListener_toMain = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ListActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        };
+        mButton.setOnClickListener(onClickListener_toMain);
 
     }
 }
